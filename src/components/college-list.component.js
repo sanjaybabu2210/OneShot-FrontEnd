@@ -34,8 +34,8 @@ const columns = [
       render: courses => (
         <>
           {courses.map(course => {
-            let color = course.length > 5 ? 'geekblue' : 'green';
-            if (course === 'loser') {
+            let color = course.length > 3 ? 'geekblue' : 'green';
+            if (course === 'Mechanical') {
               color = 'volcano';
             }
             return (

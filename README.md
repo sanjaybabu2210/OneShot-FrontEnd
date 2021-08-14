@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# One Shot AI Task
 
 This project Backend server runs on: https://glacial-wave-89509.herokuapp.com/ 
 

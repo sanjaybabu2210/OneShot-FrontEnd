@@ -86,7 +86,7 @@ export default class collegeList extends Component {
         this.setState({ search: searchValue, count:[] });
     }
     componentDidMount(){
-        axios.get('http://localhost:5000/allCollege/').then(response => {
+        axios.get('https://glacial-wave-89509.herokuapp.com/allCollege/').then(response => {
             console.log(response.data.coll);
             
             this.setState({colleges: response.data.coll})

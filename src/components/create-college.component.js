@@ -99,7 +99,7 @@ export default class addCollege extends Component {
             }
             console.log(college);
 
-            axios.post('http://localhost:5000/addColleges/', college).then(res => console.log(res.data));
+            axios.post('https://glacial-wave-89509.herokuapp.com/addColleges/', college).then(res => console.log(res.data));
 
 
             // window.location = '/';

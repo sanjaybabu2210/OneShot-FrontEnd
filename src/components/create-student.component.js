@@ -69,7 +69,7 @@ export default class addStudent extends Component {
         }
         console.log(student);
 
-        axios.post('http://localhost:5000/addStudents/', student).then(res => console.log(res.data));
+        axios.post('https://glacial-wave-89509.herokuapp.com/addStudents/', student).then(res => console.log(res.data));
 
         this.setState({
             id :'',

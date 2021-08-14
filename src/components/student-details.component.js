@@ -54,7 +54,7 @@ export default class collegeList extends Component {
     render(){
         return (
             <div>
-                <h3>All Colleges</h3>
+                <h3>Student Details</h3>
                 <table className="table">
                     <thead className="thead-light">
                         <tr>

@@ -74,6 +74,7 @@ render(){
           })}
         </Header>
         <Content
+        
           className="site-layout-background"
           style={{
             margin: '24px 16px',

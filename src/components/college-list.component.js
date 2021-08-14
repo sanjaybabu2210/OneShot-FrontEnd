@@ -76,7 +76,7 @@ export default class collegeList extends Component {
         // this.deleteCollege = this.deleteCollege.bind(this);
 
 
-        this.state = {colleges: [], search: '',freqcat: []}
+        this.state = {colleges: [], search: '',freqcat: [],frestat:[]}
     }
     handleChange(event) {
         // Get event value
@@ -100,14 +100,29 @@ export default class collegeList extends Component {
                 }
 
             }
-           
-            
+           var freq2 = [];
+
+            for (var i=0; i< response.data.coll.length;i++) {
+                
+
+                  var x = response.data.coll[i].state;
+                   freq2.push(x.trim());
+                
+
+            }
+
+
             const counts = {};
             
             for (const col of freq) {
               counts[col] = counts[col] ? counts[col] + 1 : 1;
             }
 
+            const counts2 = {};
+            
+            for (const col of freq2) {
+              counts2[col] = counts2[col] ? counts2[col] + 1 : 1;
+            }
 
             const unique = (value, index, self) => {
               return self.indexOf(value) === index
@@ -115,15 +130,22 @@ export default class collegeList extends Component {
             
            
             const datat = freq.filter(unique);
+            const datat2 = freq2.filter(unique);
+
             var cout = [];
+            var cout2 = [];
+
             
             for(const x of datat){
               cout.push({key:x , value: counts[x]});
             }
-            
+            for(const x of datat2){
+              cout2.push({key:x , value: counts2[x]});
+            }
             console.log(cout);
             // console.log(keys(counts))
             this.setState({freqcat:cout});
+            this.setState({frestat:cout2});
             
             for (const col of freq) {
               counts[col] = counts[col] ? counts[col] + 1 : 1;
@@ -146,7 +168,7 @@ export default class collegeList extends Component {
 
 
       
-var config = {
+var config1 = {
 appendPadding: 10,
 data: this.state.freqcat,
 angleField: 'value',
@@ -171,10 +193,40 @@ statistic: {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
     },
-    content: 'Colleges',
+    content: 'Courses',
   },
 },
 };
+
+var config2 = {
+  appendPadding: 10,
+  data: this.state.frestat,
+  angleField: 'value',
+  colorField: 'key',
+  radius: 1,
+  innerRadius: 0.6,
+  label: {
+    type: 'inner',
+    offset: '-50%',
+    content: '{value}',
+    style: {
+      textAlign: 'center',
+      fontSize: 14,
+    },
+  },
+  interactions: [{ type: 'element-selected' }, { type: 'element-active' }],
+  statistic: {
+    title: false,
+    content: {
+      style: {
+        whiteSpace: 'pre-wrap',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+      },
+      content: 'States',
+    },
+  },
+  };
         let colle = this.state.colleges,
             searchString = this.state.search.trim().toLowerCase();
             if (searchString.length > 0) {
@@ -188,7 +240,9 @@ statistic: {
                 <UserInput update={(e) => this.handleChange(e)} />
                 <Table columns={columns} dataSource={colle} />
 
-                <Pie {...config} />
+                <Pie {...config1} />
+                <Pie {...config2} />
+
             </div>
         )
     }

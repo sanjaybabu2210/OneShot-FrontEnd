@@ -74,7 +74,7 @@ render(){
           })}
         </Header>
         <Content
-        
+
           className="site-layout-background"
           style={{
             margin: '24px 16px',
@@ -85,7 +85,7 @@ render(){
             
       <div className="">
       <br/>
-      <Route path="/" exact component = {dashBoard} />
+      <Route path="/" exact component = {collegeList} />
       <Route path="/simi/colleges/:id"  component={collegesimiDetails}  />
       <Route path="/colleges/:id" exact component={collegeDetails}  />
       <Route path="/colleges" exact component ={collegeList} />

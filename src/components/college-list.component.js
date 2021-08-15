@@ -283,9 +283,9 @@ var config2 = {
 
 
 
-                  <div className="col-sm-4" style={{ background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw',minWidth:320}}>
+                  <div className="col-sm-4" style={{ background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:10,minWidth:320,}}>
                   <Link to="/colleges"  >
-                          <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'30vh',width:'34vw'}}>
+                          <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'33vh',width:'34vw',marginTop:-10,padding:30}}>
                             <h3 style={{color:'snow',marginTop:'10vh'}}>College List</h3>
                           </div> </Link>
                   </div>
@@ -294,7 +294,7 @@ var config2 = {
                   <div className="col-sm-4" style={{background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw',minWidth:320}}>
                   
                   <Link to="/students"  >
-                  <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'30vh',width:'34vw'}}>
+                  <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'30vh',width:'34vw',marginTop:-10,padding:30}}>
                             <h3 style={{color:'snow',marginTop:'10vh'}}>Student List</h3>
                           </div>
                           </Link>

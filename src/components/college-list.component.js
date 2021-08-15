@@ -333,6 +333,22 @@ var config2 = {
 </Dropdown>
 
               </div>
+              
+              <div className="col-sm-3">
+              < Dropdown>
+  <Dropdown.Toggle variant="info" id="dropdown-basic">
+    Change View 
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item onClick={this.changeStatusTrue}>States View</Dropdown.Item>
+    <Dropdown.Item onClick={this.changeStatusFalse}>Courses View</Dropdown.Item>
+   
+  </Dropdown.Menu>
+</Dropdown>
+
+              </div>
+
               <div className="col-sm-3">
               < Dropdown>
   <Dropdown.Toggle variant="info" id="dropdown-basic">
@@ -345,20 +361,6 @@ var config2 = {
     })}
 
  </Dropdown.Menu>
-</Dropdown>
-
-              </div>
-              <div className="col-sm-3">
-              < Dropdown>
-  <Dropdown.Toggle variant="info" id="dropdown-basic">
-    Change View 
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item onClick={this.changeStatusTrue}>States View</Dropdown.Item>
-    <Dropdown.Item onClick={this.changeStatusFalse}>Courses View</Dropdown.Item>
-   
-  </Dropdown.Menu>
 </Dropdown>
 
               </div>

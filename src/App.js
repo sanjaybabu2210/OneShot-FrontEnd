@@ -47,9 +47,16 @@ render(){
     return (
      
         <Router >
-    <Layout>
-      <Sider collapsible collapsed={this.state.collapsed}>
-         <Link to="/" className="navbar-brand p-3"><div className="logo" /></Link>
+    <Layout style={{
+           
+         
+            
+            minWidth: 1200,
+          }}>
+
+{/* <MediaQuery query='(max-width: 1224px)'> */}
+      <Sider collapsible collapsed={this.state.collapsed} >
+         <Link to="/" className="navbar-brand p-3" ><div className="logo" /></Link>
 
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<MenuFoldOutlined />}>
@@ -68,6 +75,7 @@ render(){
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
+          <MenuFoldOutlined />
           {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger',
             onClick: this.toggle,
@@ -80,6 +88,7 @@ render(){
             margin: '24px 16px',
             padding: 24,
             minHeight: 680,
+            
           }}
         >
             

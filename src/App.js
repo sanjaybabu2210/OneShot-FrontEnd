@@ -9,8 +9,11 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   UserOutlined,
+  BookOutlined ,
   VideoCameraOutlined,
   UploadOutlined,
+  UserAddOutlined,
+  FileAddOutlined 
 } from '@ant-design/icons';
 import Navbar from "./components/navbar.component";
 import dashBoard from "./components/dashBoard-page.component";
@@ -56,30 +59,38 @@ render(){
 
 {/* <MediaQuery query='(max-width: 1224px)'> */}
       <Sider collapsible collapsed={this.state.collapsed} >
-         <Link to="/" className="navbar-brand p-3" ><div className="logo" /></Link>
-
+        { this.state.collapsed ? <div></div>:
+         <Link to="/" className="navbar-brand " ><div className="logo" style={{marginLeft:70,marginTop:20, color:'pink'}}>HOME </div></Link>
+        }
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1" icon={<MenuFoldOutlined />}>
+          <Menu.Item key="1" icon={<BookOutlined />}>
             <Link to="/colleges" className="nav-link">College List</Link>
           </Menu.Item>
           <Menu.Item key="2" icon={<UserOutlined />}>
           <Link to="/students" className="nav-link">Student List</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<MenuFoldOutlined />}>
+          <Menu.Item key="3" icon={<FileAddOutlined />}>
           <Link to="/addCollege" className="nav-link">Add College</Link>
           </Menu.Item>
-          <Menu.Item key="4" icon={<UserOutlined />}>
+          <Menu.Item key="4" icon={<UserAddOutlined />}>
           <Link to="/addStudent" className="nav-link">Add Students</Link>
           </Menu.Item>
         </Menu>
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 }}>
-          <MenuFoldOutlined />
+          <div style={ {fontWeight: 'bold',textAlign: 'center',color:'snow'}}>
+            One Shot AI TasK
+          </div>
+          
+
+          <div style={{fontSize: 23, color:'white',marginTop:-75,marginLeft:10}}>
           {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger',
             onClick: this.toggle,
           })}
+          </div>
+          
         </Header>
         <Content
 
@@ -87,7 +98,7 @@ render(){
           style={{
             margin: '24px 16px',
             padding: 24,
-            minHeight: 680,
+            minHeight: 180,
             
           }}
         >

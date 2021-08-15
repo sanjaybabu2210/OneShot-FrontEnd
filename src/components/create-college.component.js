@@ -109,7 +109,7 @@ export default class addCollege extends Component {
 
             <div>
                 
-           <form onSubmit = {this.onSubmit} style={{width:"60%",backgroundColor:"lightslategray",borderRadius:10,padding:30,margin:'auto'}}>
+           <form onSubmit = {this.onSubmit} style={{width:"60%",backgroundColor:"#F5EEF8",borderRadius:10,padding:30,margin:'auto'}}>
            <h3>Add New College</h3>
                 <div className = "form-group">
                     <label> College Id:</label>

@@ -109,7 +109,7 @@ export default class addCollege extends Component {
 
             <div>
                 
-           <form onSubmit = {this.onSubmit} style={{width:"60%",backgroundColor:"#F5EEF8",borderRadius:10,padding:30,margin:'auto'}}>
+           <form onSubmit = {this.onSubmit} style={{boxShadow:"1px 8px 6px 6px",width:"60%",backgroundColor:"#bbc4cc",borderRadius:10,padding:35,margin:'auto'}}>
            <h3>Add New College</h3>
                 <div className = "form-group">
                     <label> College Id:</label>
@@ -151,9 +151,9 @@ export default class addCollege extends Component {
                     <input type="text" className="form-control" value = {this.state.courses} onChange = {this.onChangeCourses} />
 
                 </div> 
-                <div className = "form-group" style={{marginTop:20}}>
+                <div className = "form-group" style={{marginTop:20,textAlign:'center'}}>
                 
-                    <input type="submit" className="btn btn-info" />
+                    <input type="submit" className="btn btn-info btn-lg" />
 
                 </div> 
            </form>

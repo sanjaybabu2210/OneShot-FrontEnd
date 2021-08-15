@@ -89,7 +89,7 @@ export default class addStudent extends Component {
         return (
             <div>
                 
-           <form onSubmit = {this.onSubmit} style={{width:"60%",backgroundColor:"#F5EEF8",borderRadius:10,padding:30,margin:'auto'}}>
+           <form onSubmit = {this.onSubmit} style={{ boxShadow:"1px 8px 6px 6px", width:"60%",backgroundColor:"#bbc4cc",borderRadius:10,padding:30,margin:'auto'}}>
            <h3>Add New student</h3>
                 <div className = "form-group">
                     <label> Student Id:</label>
@@ -118,9 +118,9 @@ export default class addStudent extends Component {
                     <input type="text" className="form-control" value = {this.state.skills} onChange = {this.onChangeSkills} />
 
                 </div> 
-                <div className = "form-group" style={{marginTop:20}}>
+                <div className = "form-group" style={{marginTop:20,textAlign:'center'}}>
                 
-                    <input type="submit" className="btn btn-info" />
+                    <input type="submit" className="btn btn-info btn-lg" />
 
                 </div> 
            </form>

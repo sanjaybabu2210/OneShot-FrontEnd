@@ -14,10 +14,6 @@ const Student = props => (
 
         <td> {props.stu.skills} </td>
 
-        {/* <td>
-            <Link to= {"/colleges/" + props.colle.id }> view </Link>
-           
-        </td> */}
     </tr>
 )
 
@@ -29,7 +25,6 @@ export default class collegeList extends Component {
 
         super(props);
 
-        // this.deleteCollege = this.deleteCollege.bind(this);
 
 
         this.state = {student: ""}

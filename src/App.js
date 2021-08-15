@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
 import {Link} from "react-router-dom";
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css'; 
 import { Layout, Menu } from 'antd';
 import {
   MenuUnfoldOutlined,

@@ -88,7 +88,7 @@ const columns1 = [
       key: 'view',
       render: (text, record) => (
         <Space size="middle">
-          <Link to= {"/students/" + record.id }  > view </Link>
+          <Link to= {"/students/" + record.id }  > <Tag color="default"> view </Tag> </Link>
         </Space>
       ),
     },
@@ -121,7 +121,7 @@ const columns1 = [
       key: 'view',
       render: (text, record) => (
         <Space size="middle">
-          <Link to= {"/simi/colleges/" + record.id }  > view </Link>
+          <Link to= {"/simi/colleges/" + record.id }  > <Tag color="default"> view </Tag> </Link>
         </Space>
       ),
     },

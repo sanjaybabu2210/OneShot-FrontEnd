@@ -38,8 +38,14 @@ const columns = [
         <>
           {courses.map(course => {
             let color = course.length > 3 ? 'geekblue' : 'green';
-            if (course === 'Mechanical') {
+            if (course == 'Mechanical') {
               color = 'volcano';
+            }
+            if (course == 'Electrical') {
+              color = 'warning';
+            }
+            if (course == 'Mechatronics') {
+              color = 'pink';
             }
             return (
               <Tag color={color} key={course}>
@@ -55,7 +61,7 @@ const columns = [
       key: 'view',
       render: (text, record) => (
         <Space size="middle">
-          <Link to= {"/colleges/" + record.id }  > view </Link>
+          <Link to= {"/colleges/" + record.id }  > <Tag color="default">view</Tag>  </Link>
         </Space>
       ),
     },

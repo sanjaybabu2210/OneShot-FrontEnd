@@ -88,12 +88,19 @@ export default class collegeList extends Component {
         // this.deleteCollege = this.deleteCollege.bind(this);
 
 
-        this.state = {colleges: [], search: '',freqcat: [],frestat:[],status:false}
+        this.state = {colleges: [], search: '',freqcat: [],frestat:[],status:false,statecat:[],coursecat: []}
         this.changeStatusTrue = this.changeStatusTrue.bind(this)
         this.changeStatusFalse = this.changeStatusFalse.bind(this)
 
 
     }
+    // stateList(){
+    //               return (
+    //                 <Dropdown.Item onClick={this.changeStatusFalse}></Dropdown.Item>
+
+    //              );
+
+    // }
     changeStatusTrue(){
         this.setState({status:false});
     }
@@ -136,7 +143,7 @@ export default class collegeList extends Component {
                 
 
             }
-
+            
 
             const counts = {};
             
@@ -157,6 +164,8 @@ export default class collegeList extends Component {
            
             const datat = freq.filter(unique);
             const datat2 = freq2.filter(unique);
+            this.setState({statecat:datat2});
+            this.setState({coursecat:datat});
 
             var cout = [];
             var cout2 = [];
@@ -274,7 +283,7 @@ var config2 = {
 
 
 
-                  <div className="col-sm-4" style={{background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw'}}>
+                  <div className="col-sm-4" style={{ background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw',minWidth:320}}>
                   <Link to="/colleges"  >
                           <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'30vh',width:'34vw'}}>
                             <h3 style={{color:'snow',marginTop:'10vh'}}>College List</h3>
@@ -282,7 +291,7 @@ var config2 = {
                   </div>
 
                   
-                  <div className="col-sm-4" style={{background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw'}}>
+                  <div className="col-sm-4" style={{background:'#2f4f4f ',height:'35vh',width:'36vw',margin:'auto',borderRadius:5,boxShadow:"2px 4px 4px 6px",padding:'1vw',minWidth:320}}>
                   
                   <Link to="/students"  >
                   <div style={{textAlign:'center',verticalAlign:'middle',fontFamily:'fantasy',text:'snow',height:'30vh',width:'34vw'}}>
@@ -306,7 +315,41 @@ var config2 = {
 
 
 
-            <div style={{textAlign:'center',marginBottom:20}}>< Dropdown>
+            <div style={{textAlign:'center',marginLeft:"22%",marginBottom:30}} className="row">
+              
+              
+              <div className="col-sm-3">
+              < Dropdown>
+  <Dropdown.Toggle variant="info" id="dropdown-basic">
+    Select By State
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    {this.state.statecat.map(state => {
+
+        return( <Dropdown.Item> <Link to={"/state/college/" + state} >{state}</Link></Dropdown.Item>)
+    })}
+
+ </Dropdown.Menu>
+</Dropdown>
+
+              </div>
+              <div className="col-sm-3">
+              < Dropdown>
+  <Dropdown.Toggle variant="info" id="dropdown-basic">
+    Select By Course
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    {this.state.coursecat.map(course => {
+
+        return( <Dropdown.Item> <Link to={"/course/college/" + course} >{course}</Link></Dropdown.Item>)
+    })}
+
+ </Dropdown.Menu>
+</Dropdown>
+
+              </div>
+              <div className="col-sm-3">
+              < Dropdown>
   <Dropdown.Toggle variant="info" id="dropdown-basic">
     Change View 
   </Dropdown.Toggle>
@@ -316,7 +359,12 @@ var config2 = {
     <Dropdown.Item onClick={this.changeStatusFalse}>Courses View</Dropdown.Item>
    
   </Dropdown.Menu>
-</Dropdown></div>
+</Dropdown>
+
+              </div>
+ 
+
+</div>
 
             {this.state.status?<div style={{}}>
             <Card className="bg-light text-white p-4">

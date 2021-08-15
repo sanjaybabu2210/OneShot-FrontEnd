@@ -17,7 +17,9 @@ import {
 } from '@ant-design/icons';
 import Navbar from "./components/navbar.component";
 import dashBoard from "./components/dashBoard-page.component";
+import collegeCourseView from "./components/college-course.component";
 import collegeList from "./components/college-list.component";
+import collegeStateView from "./components/college-state.component";
 import collegeView from "./components/collegeview-list.component";
 import collegesimiDetails from "./components/college-details-simi.component";
 import collegeDetails from "./components/college-details.component";
@@ -99,7 +101,7 @@ render(){
           style={{
             margin: '24px 16px',
             padding: 24,
-            minHeight: 680,
+            minHeight: 980,
             
           }}
         >
@@ -107,6 +109,9 @@ render(){
       <div className="">
       <br/>
       <Route path="/" exact component = {collegeList} />
+      <Route path="/course/college/:id" component={collegeCourseView}/>
+
+      <Route path="/state/college/:id" component={collegeStateView}/>
       <Route path="/simi/colleges/:id"  component={collegesimiDetails}  />
       <Route path="/colleges/:id" exact component={collegeDetails}  />
       <Route path="/colleges" exact component ={collegeView} />

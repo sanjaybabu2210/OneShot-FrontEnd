@@ -4,6 +4,9 @@ import {Link} from  'react-router-dom';
 import  { useState, useEffect } from 'react';
 import { Pie } from '@ant-design/charts';
 import { Table, Tag, Space } from 'antd';
+import { Button } from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Dropdown,Card } from 'react-bootstrap';
 
 
 
@@ -76,8 +79,18 @@ export default class collegeList extends Component {
         // this.deleteCollege = this.deleteCollege.bind(this);
 
 
-        this.state = {colleges: [], search: '',freqcat: [],frestat:[]}
+        this.state = {colleges: [], search: '',freqcat: [],frestat:[],status:false}
+        this.changeStatusTrue = this.changeStatusTrue.bind(this)
+        this.changeStatusFalse = this.changeStatusFalse.bind(this)
+
+
     }
+    changeStatusTrue(){
+        this.setState({status:false});
+    }
+    changeStatusFalse(){
+      this.setState({status:true});
+  }
     handleChange(event) {
         // Get event value
         let searchValue = event.target.value;
@@ -92,6 +105,8 @@ export default class collegeList extends Component {
             this.setState({colleges: response.data.coll})
 
             var freq = [];
+
+            var colcount = response.data.coll.length;
             for (var i=0; i< response.data.coll.length;i++) {
                 for(var j=0;j< response.data.coll[i].courses.length;j++){
 
@@ -100,6 +115,8 @@ export default class collegeList extends Component {
                 }
 
             }
+
+            var countcour = freq.length;
            var freq2 = [];
 
             for (var i=0; i< response.data.coll.length;i++) {
@@ -137,10 +154,15 @@ export default class collegeList extends Component {
 
             
             for(const x of datat){
-              cout.push({key:x , value: counts[x]});
+
+              var val = (counts[x]/countcour)*100;
+              val = parseInt(val.toFixed(2));
+              cout.push({key:x , value: val});
             }
             for(const x of datat2){
-              cout2.push({key:x , value: counts2[x]});
+
+              var val = (counts2[x]/colcount)*100;
+              cout2.push({key:x , value: val});
             }
             console.log(cout);
             // console.log(keys(counts))
@@ -240,8 +262,32 @@ var config2 = {
                 <UserInput update={(e) => this.handleChange(e)} />
                 <Table columns={columns} dataSource={colle} />
 
-                <Pie {...config1} />
-                <Pie {...config2} />
+
+            <div style={{textAlign:'center',marginBottom:20}}>< Dropdown>
+  <Dropdown.Toggle variant="info" id="dropdown-basic">
+    Change View 
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item onClick={this.changeStatusTrue}>States View</Dropdown.Item>
+    <Dropdown.Item onClick={this.changeStatusFalse}>Courses View</Dropdown.Item>
+   
+  </Dropdown.Menu>
+</Dropdown></div>
+
+            {this.state.status?<div style={{}}>
+            <Card className="bg-light text-white p-4">
+ 
+            <Pie {...config1} />
+</Card>
+           
+            </div> : <div>
+            <Card className="bg-light text-white p-4" >
+            <Pie {...config2} />
+            </Card>
+            </div>}
+                
+                
 
             </div>
         )

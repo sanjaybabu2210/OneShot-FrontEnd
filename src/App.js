@@ -52,13 +52,13 @@ render(){
         <Router >
     <Layout style={{
            
-         
+            
             
             minWidth: 1200,
           }}>
 
 {/* <MediaQuery query='(max-width: 1224px)'> */}
-      <Sider collapsible collapsed={this.state.collapsed} >
+      <Sider trigger={null} collapsible collapsed={this.state.collapsed} >
         { this.state.collapsed ? <div></div>:
          <Link to="/" className="navbar-brand " ><div className="logo" style={{marginLeft:70,marginTop:20, color:'pink'}}>HOME </div></Link>
         }
@@ -98,7 +98,7 @@ render(){
           style={{
             margin: '24px 16px',
             padding: 24,
-            minHeight: 180,
+            minHeight: 80,
             
           }}
         >

@@ -39,7 +39,7 @@ curl \
 --header "Content-Type: application/json" \
 --request POST \
 --data '{
-    "id":"6","name": "Banaras Institute","year":" Established Year ", 
+    "id":"6","name": "Institute Name","year":" Established Year ", 
     "city":"city name" , "state":"state name" ,
     "country":"Country Name", "students":"No of Students",
     "courses":"course serparete with commas..."

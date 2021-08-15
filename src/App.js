@@ -18,6 +18,7 @@ import {
 import Navbar from "./components/navbar.component";
 import dashBoard from "./components/dashBoard-page.component";
 import collegeList from "./components/college-list.component";
+import collegeView from "./components/collegeview-list.component";
 import collegesimiDetails from "./components/college-details-simi.component";
 import collegeDetails from "./components/college-details.component";
 import studentList from "./components/student-list.component";
@@ -108,7 +109,7 @@ render(){
       <Route path="/" exact component = {collegeList} />
       <Route path="/simi/colleges/:id"  component={collegesimiDetails}  />
       <Route path="/colleges/:id" exact component={collegeDetails}  />
-      <Route path="/colleges" exact component ={collegeList} />
+      <Route path="/colleges" exact component ={collegeView} />
       
       <Route path="/students" exact component = {studentList} />
       <Route path="/students/:id" component = {studentDetails} />

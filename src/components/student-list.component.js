@@ -102,7 +102,7 @@ export default class collegeList extends Component {
 
         return (
             <div>
-                <h3>Student List</h3>
+                <h3 style={{textAlign:'center'}}> All Student List</h3>
                 <UserInput update={(e) => this.handleChange(e)} />
 
                                 <Table columns={columns} dataSource={stud} />

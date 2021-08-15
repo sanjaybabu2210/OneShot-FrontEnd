@@ -258,7 +258,7 @@ var config2 = {
 
         return (
             <div>
-                <h3>All Colleges</h3>
+                <h3 style={{textAlign:'center'}}>All Colleges View</h3>
                 <UserInput update={(e) => this.handleChange(e)} />
                 <Table columns={columns} dataSource={colle} />
 

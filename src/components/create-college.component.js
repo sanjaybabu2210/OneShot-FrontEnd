@@ -33,7 +33,7 @@ export default class addCollege extends Component {
 
     componentDidMount(){
         this.setState({
-            id: '3',
+            id: '',
             name: 'test',
             year: '',
             city: '',

@@ -39,9 +39,9 @@ curl \
 --header "Content-Type: application/json" \
 --request POST \
 --data '{
-    "id":"6","name": "Banaras Institute","year":"1989","city":"city name","state":"state name",
-    "country":"Country Name",
-    "students":"No of Students",
+    "id":"6","name": "Banaras Institute","year":" Established Year ", 
+    "city":"city name" , "state":"state name" ,
+    "country":"Country Name", "students":"No of Students",
     "courses":"course serparete with commas..."
     
 }' \

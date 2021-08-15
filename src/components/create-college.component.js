@@ -107,7 +107,7 @@ export default class addCollege extends Component {
     render(){
         return (
 
-            <div style={{width:"40vw",padding:20,marginLeft:'20%',background:"snow",borderRadius:10}}>
+            <div style={{  width:"40vw",padding:20,marginLeft:'20%',background:"snow",borderRadius:10,minWidth:400}}>
                 <h3>Add New College</h3>
            <form onSubmit = {this.onSubmit}>
 

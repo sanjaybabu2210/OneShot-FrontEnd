@@ -88,7 +88,7 @@ export default class addStudent extends Component {
         return (
             <div>
                 
-           <form onSubmit = {this.onSubmit} style={{width:"40vw",padding:20,marginLeft:'20%',background:"snow",borderRadius:10}}>
+           <form onSubmit = {this.onSubmit} style={{width:"40vw",padding:20,marginLeft:'20%',background:"snow",borderRadius:10,minWidth:400}}>
            <h3>Add New student</h3>
                 <div className = "form-group">
                     <label> Student Id:</label>

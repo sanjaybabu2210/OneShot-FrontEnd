@@ -47,6 +47,9 @@ const columns = [
             if (course == 'Mechatronics') {
               color = 'pink';
             }
+            if (course == 'Electronics') {
+              color = 'purple';
+            }
             return (
               <Tag color={color} key={course}>
                 {course.toUpperCase()}
@@ -61,7 +64,7 @@ const columns = [
       key: 'view',
       render: (text, record) => (
         <Space size="middle">
-          <Link to= {"/colleges/" + record.id }  > <Tag color="default">view</Tag>  </Link>
+          <Link to= {"/colleges/" + record.id }  > <Tag color="#778899">view</Tag>  </Link>
         </Space>
       ),
     },
@@ -168,6 +171,8 @@ export default class collegeList extends Component {
             for(const x of datat2){
 
               var val = (counts2[x]/colcount)*100;
+              val = parseInt(val.toFixed(2));
+
               cout2.push({key:x , value: val});
             }
             console.log(cout);
@@ -206,7 +211,7 @@ innerRadius: 0.6,
 label: {
   type: 'inner',
   offset: '-50%',
-  content: '{value}',
+  content: '{value} %',
   style: {
     textAlign: 'center',
     fontSize: 14,
@@ -236,7 +241,7 @@ var config2 = {
   label: {
     type: 'inner',
     offset: '-50%',
-    content: '{value}',
+    content: '{value} %',
     style: {
       textAlign: 'center',
       fontSize: 14,

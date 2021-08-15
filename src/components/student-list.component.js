@@ -26,7 +26,7 @@ const columns = [
       key: 'view',
       render: (text, record) => (
         <Space size="middle">
-          <Link to= {"/students/" + record.id }  > <Tag color="default"> view </Tag> </Link>
+          <Link to= {"/students/" + record.id }  > <Tag color="#778899"> view </Tag> </Link>
         </Space>
       ),
     },
